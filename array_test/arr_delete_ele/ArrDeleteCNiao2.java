@@ -29,7 +29,8 @@ public class ArrDeleteCNiao2 {
         //2. arr = 0,1,2,2,3,0,4,2   val = 2  结果 : newArrLen = 5
         //3. arr = 1,2,3,4,5,6       val = 3  结果 : newArrLen = 5
         //4. arr = 1,3,5,2,3,7       val = 3  结果 : newArrLen = 4
-        int[] arr = new int[]{1,3,5,2,3,7}; 
+        //5. arr = 1,3,5,2,3,3       val = 3  结果 : newArrLen = 3
+        int[] arr = new int[]{1,3,5,2,3,3}; 
         int newArrLen = removeElement(arr, 3);
         System.out.println(
             "处理后的数组结果 -> " + Arrays.toString(arr) 
@@ -38,6 +39,7 @@ public class ArrDeleteCNiao2 {
         //1. 处理后的数组结果 -> [4, 1, 2, 3, 4] 新长度为 -> 3
         //3. 处理后的数组结果 -> [1, 2, 6, 4, 5, 6] 新长度为 -> 5
         //4. 处理后的数组结果 -> [1, 7, 5, 2, 3, 7] 新长度为 -> 4
+        //5. 处理后的数组结果 -> [1, 2, 5, 2, 3, 3] 新长度为 -> 3
     }
 
     public static void main(String[] args){
