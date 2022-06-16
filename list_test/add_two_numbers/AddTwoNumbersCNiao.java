@@ -52,6 +52,9 @@ public class AddTwoNumbersCNiao {
         val %= 10;
         a.val = val;
         a.next = add(a.next, b.next, carry);
+
+        //直接返回 链表a, 如果 链表b 比 链表a 长, 那么 a 后边就多创建几个结点
+        //再修改 结点a 的 val 值为 当前计算出的 val 值
         return a;
     } 
 
@@ -95,7 +98,7 @@ public class AddTwoNumbersCNiao {
         Utils.printListNode(res);
     }
 
-    public void test_func2() {
+    public void test_func2_1() {
         ListNode a2 = new ListNode(2);
         ListNode a4 = new ListNode(4);
         ListNode a3 = new ListNode(3);
@@ -114,10 +117,32 @@ public class AddTwoNumbersCNiao {
         Utils.printListNode(res);
     }
 
+    public void test_func2_2() {
+        ListNode a2 = new ListNode(2);
+        ListNode a4 = new ListNode(4);
+        ListNode a3 = new ListNode(3);
+
+        ListNode b5 = new ListNode(5);
+        ListNode b6 = new ListNode(6);
+        ListNode b4 = new ListNode(4);
+        ListNode b8 = new ListNode(8);
+
+        a2.next = a4;
+        a4.next = a3;
+
+        b5.next = b6;
+        b6.next = b4;
+        b4.next = b8;
+
+        ListNode res = addTwoNumbers_2(a2, b5); //addTwoNumbers_1(null, b5);
+        Utils.printListNode(res);
+    }
+
     public static void main(String[] args){
         AddTwoNumbersCNiao obj = new AddTwoNumbersCNiao();
         //obj.test_func1_1();     //7       0       8
         //obj.test_func1_2();     //7       0       8       8
-        obj.test_func2();         //7       0       8
+        //obj.test_func2_1();     //7       0       8
+        obj.test_func2_2();       //7       0       8       8
     }
 }
