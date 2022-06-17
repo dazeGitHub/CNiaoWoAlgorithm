@@ -44,11 +44,11 @@ public class ReverseListCNiao {
         if(head == null || head.next == null){
             return head;
         }
-        ListNode pre = null;
-        ListNode cur = head;
+        ListNode pre = null; //前面的结点
+        ListNode cur = head; //当前的结点
         while(cur != null){
             ListNode tmp = cur.next;
-            cur.next = pre;
+            cur.next = pre; //这是关键的步骤
             pre = cur;
             cur = tmp;
         }
